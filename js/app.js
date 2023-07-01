@@ -25,11 +25,7 @@ function buildNavigationMenu() {
 // Function to handle smooth scrolling to sections
 function scrollToSection(event) {
   event.preventDefault();
-  if (event.target.tagName === 'A') {
-    const sectionId = event.target.getAttribute('href').slice(1);
-    const sectionToScrollTo = document.getElementById(sectionId);
-    sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
-  } else if (event.target.tagName === 'LI') {
+  if (event.target.tagName === 'LI') {
     const sectionId = event.target.getAttribute('data-link');
     const sectionToScrollTo = document.getElementById(sectionId);
     sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
