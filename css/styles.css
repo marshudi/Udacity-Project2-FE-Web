@@ -91,6 +91,7 @@ section {
 .navbar__menu .menu__link:hover {
   background: #333;
   text-decoration:solid;
+  color: #fff;
 }
 
 .navbar__menu .menu__link:hover a {
@@ -98,8 +99,8 @@ section {
 }
 
 .navbar__menu .menu__link.active {
-  color: #fff;
-  background-color: #97c5fe;
+  color: #ffffff;
+  background-color: #71b0a4;
 }
 
 

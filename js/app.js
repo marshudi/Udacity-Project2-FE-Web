@@ -8,10 +8,19 @@ function buildNavigationMenu() {
     const listItem = document.createElement('li');
     listItem.classList.add('menu__link');
     listItem.setAttribute('data-link', section.id);
-    listItem.innerHTML = `<a href="#${section.id}">${section.dataset.nav}</a>`;
-    navList.appendChild(listItem);
+    listItem.textContent = section.dataset.nav;
+
+
+    const link = document.createElement('a');
+    link.href = `#${section.id}`;
+    
+
+    
+    link.appendChild(listItem);
+    navList.appendChild(link);
   });
 }
+
 
 // Function to handle smooth scrolling to sections
 function scrollToSection(event) {
@@ -20,8 +29,13 @@ function scrollToSection(event) {
     const sectionId = event.target.getAttribute('href').slice(1);
     const sectionToScrollTo = document.getElementById(sectionId);
     sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
+  } else if (event.target.tagName === 'LI') {
+    const sectionId = event.target.getAttribute('data-link');
+    const sectionToScrollTo = document.getElementById(sectionId);
+    sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
   }
 }
+
 
 // Function to add and remove 'active' class based on intersection with viewport
 function handleIntersection(entries) {
